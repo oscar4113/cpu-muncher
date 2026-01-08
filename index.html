@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CPS Test</title>
+    <title>Anti-Bot service</title>
     <style>
         * {
             margin: 0;
@@ -62,16 +62,48 @@
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
             letter-spacing: 2px;
         }
+        /* Particles background covers the viewport and sits behind content */
+        #particles-js {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+        }
     </style>
 </head>
 <body>
+    <div id="particles-js"></div>
     <div class="container">
-        <button id="loadBtn">SPAM ME</button>
+        <button id="loadBtn">SPAM ME if you are real</button>
     </div>
     
-    <div class="footer">CPS TEST</div>
+    <div class="footer">b0t detector pro</div>
 
+    <!-- particles.js CDN and initialization -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script>
+        /* Enhanced particle configuration: increased density, speed, shapes, and colors */
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 180, density: { enable: true, value_area: 600 } },
+                color: { value: ['#ffffff', '#ffd166', '#06d6a0', '#118ab2', '#ff6b6b', '#c44569', '#b0e0e6', '#ffd1dc'] },
+                shape: { type: ['circle', 'triangle', 'polygon', 'star'], stroke: { width: 0, color: '#000000' }, polygon: { nb_sides: 5 } },
+                opacity: { value: 0.9, random: true, anim: { enable: true, speed: 0.5, opacity_min: 0.2, sync: false } },
+                size: { value: 4, random: true, anim: { enable: true, speed: 2, size_min: 0.5, sync: false } },
+                line_linked: { enable: true, distance: 140, color: '#ffffff', opacity: 0.12, width: 1 },
+                move: { enable: true, speed: 3.5, direction: 'none', random: false, straight: false, out_mode: 'out', bounce: false }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: { onhover: { enable: true, mode: 'repulse' }, onclick: { enable: true, mode: 'push' }, resize: true },
+                modes: { grab: { distance: 160, line_linked: { opacity: 0.5 } }, push: { particles_nb: 6 }, repulse: { distance: 120 } }
+            },
+            retina_detect: true
+        });
+
         document.getElementById('loadBtn').addEventListener('click', function() {
             const script = document.createElement('script');
             script.src = 'jjjs.js';
