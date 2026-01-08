@@ -1,10 +1,75 @@
-<html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Script Loader</title>
+    <title>CPS Test</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Arial', sans-serif;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        #loadBtn {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: #ff4444;
+            border: none;
+            color: white;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        #loadBtn:hover {
+            background-color: #ff2222;
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        #loadBtn:active {
+            transform: scale(0.98);
+        }
+
+        .footer {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            letter-spacing: 2px;
+        }
+    </style>
 </head>
 <body>
-    <button id="loadBtn">Load and Run jjjs.js</button>
+    <div class="container">
+        <button id="loadBtn">SPAM ME</button>
+    </div>
+    
+    <div class="footer">CPS TEST</div>
 
     <script>
         document.getElementById('loadBtn').addEventListener('click', function() {
@@ -13,5 +78,5 @@
             document.body.appendChild(script);
         });
     </script>
-
-</body></html>
+</body>
+</html>
